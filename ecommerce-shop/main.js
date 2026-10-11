@@ -24,7 +24,9 @@ async function loadProducts() {
 // ------------------------------------------------------------
 function renderProducts(list) {
   const grid = document.getElementById('product-grid');
-  grid.innerHTML = list.map(cardHTML).join('');
+  grid.innerHTML = list.length
+    ? list.map(cardHTML).join('')
+    : '<p class="col-span-full py-8 text-center text-stone-500">ไม่พบสินค้าที่ค้นหา</p>';
 }
 
 // แปลงคะแนนดาวเป็นรูปดาว เช่น 4 → ★★★★☆
@@ -51,7 +53,7 @@ function cardHTML(product) {
       </div>
 
       <div class="p-4">
-        <h4 class="font-semibold truncate">${product.name}</h4>
+        <h4 class="fontbold truncate">${product.name}</h4>
 
         <!-- ดาวรีวิว + จำนวนรีวิว -->
         <div class="flex items-center gap-1.5 text-amber-500 text-sm mt-1">
@@ -85,7 +87,14 @@ function cardHTML(product) {
 //         (3) อัปเดตตัวเลขบนตะกร้า + รายการในตะกร้า
 // ------------------------------------------------------------
 function addToCart(id) {
-  // TODO: เขียนโค้ดตรงนี้
+  const product = allProducts.find(item => item.id === id);
+
+  if (!product) return;
+
+  cart.push(product);
+
+  updateCartCount();
+  renderCart();
 }
 
 // ------------------------------------------------------------
@@ -103,13 +112,22 @@ function renderCart() {
   const emptyEl = document.getElementById('cart-empty');
 
   emptyEl.classList.toggle('hidden', cart.length > 0);
-  listEl.innerHTML = cart
-    .map((p) => `<li class="flex justify-between"><span>${p.emoji} ${p.name}</span><span>฿${p.price}</span></li>`)
+  const itemCounts = new Map();
+  cart.forEach((product) => {
+    const item = itemCounts.get(product.id);
+    if (item) {
+      item.quantity += 1;
+    } else {
+      itemCounts.set(product.id, { product, quantity: 1 });
+    }
+  });
+
+  listEl.innerHTML = Array.from(itemCounts.values())
+    .map(({ product, quantity }) => `<li class="flex justify-between"><span>${product.emoji} ${product.name} x${quantity}</span><span>฿${product.price}</span></li>`)
     .join('');
 
-  // 👇 โจทย์ 6: ยอดรวมราคาสินค้าในตะกร้า ยังค้างที่ ฿0 — คิดยอดรวมแล้วเอาไปแสดงที่ #cart-total
-  //    ใบ้: total = cart.reduce((sum, p) => sum + p.price, 0)  แล้ว
-  //    document.getElementById('cart-total').textContent = '฿' + total;
+  const total = cart.reduce((sum, product) => sum + product.price, 0);
+  document.getElementById('cart-total').textContent = `฿${total.toLocaleString('th-TH')}`;
 }
 
 // เปิด/ปิด แผงตะกร้า
@@ -124,6 +142,19 @@ function closeCart() {
 document.getElementById('cart-button').onclick = openCart;
 document.getElementById('cart-close').onclick = closeCart;
 document.getElementById('cart-overlay').onclick = closeCart;
+document.getElementById('product-search').addEventListener('input', (event) => {
+  const query = event.target.value.trim().toLocaleLowerCase('th');
+  const matchingProducts = allProducts.filter((product) =>
+    product.name.toLocaleLowerCase('th').includes(query)
+  );
+  renderProducts(matchingProducts);
+});
+document.getElementById('shop-now').onclick = () => {
+  document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+};
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeCart();
+});
 
 // เริ่มทำงาน: โหลดสินค้าเมื่อเปิดหน้าเว็บ
 loadProducts();

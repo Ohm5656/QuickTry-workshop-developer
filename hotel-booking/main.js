@@ -9,6 +9,7 @@ async function loadHotels() {
 function renderHotels(list) {
   const grid = document.getElementById('hotel-grid');
   grid.innerHTML = list.map(cardHTML).join('');
+  document.getElementById('result-count').textContent = `พบ ${list.length} ที่พัก`;
 }
 
 // แปลงคะแนนเป็นดาว เช่น 4 → ★★★★☆
@@ -65,6 +66,15 @@ function cardHTML(hotel) {
 
 function filterHotels(city) {
   // TODO
+   let filteredHotels;
+   if (city === 'ทั้งหมด') {
+    filteredHotels = allHotels;
+  }
+  else {
+    filteredHotels = allHotels.filter((hotel) => hotel.city === city);
+  }
+  renderHotels(filteredHotels);
+  document.getElementById('result-count').textContent = `พบ ${filteredHotels.length} ที่พัก`;
 }
 
 //  ต่อปุ่มกรองให้เรียก filterHotels + ไฮไลต์ปุ่มที่เลือกอยู่

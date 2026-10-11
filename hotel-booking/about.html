@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>เกี่ยวกับเรา — จองที่พัก</title>
+  <title>เกี่ยวกับเรา — OhmHotel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['IBM Plex Sans Thai', 'sans-serif'] } } } };
@@ -15,7 +15,7 @@
 <body class="bg-stone-50 text-stone-800">
   <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-stone-100">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-bold text-teal-600">จองที่พัก</a>
+      <a href="index.html" class="text-2xl font-bold text-teal-600">OhmHotel</a>
       <nav class="flex items-center gap-6 text-stone-600 font-medium">
         <a href="index.html" class="hover:text-teal-600">หน้าแรก</a>
         <a href="about.html" class="text-teal-600 font-semibold">เกี่ยวกับเรา</a>
@@ -28,10 +28,58 @@
       <h1 class="text-4xl md:text-5xl font-bold">เกี่ยวกับเรา</h1>
     </div>
   </section>
-  <main class="max-w-3xl mx-auto px-6 py-14">
-    <p class="text-stone-400 text-center">(ยังไม่มีเนื้อหา — เติมตรงนี้)</p>
 
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <section class="grid md:grid-cols-2 gap-10 items-center
+                bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
+    <div>
+    <h2 class="text-2xl font-bold mb-5">
+      เรื่องราวของเรา
+    </h2>
+
+    <div class="space-y-4 text-stone-600 leading-7">
+      <p>
+        OhmHotel ถูกสร้างขึ้นเพื่อช่วยให้การค้นหาที่พักเป็นเรื่องง่ายและสะดวกมากขึ้น
+        ไม่ว่าคุณกำลังวางแผนเที่ยวทะเล ขึ้นดอย หรือพักผ่อนในเมือง
+      </p>
+      <p>
+        เราต้องการให้คุณสามารถค้นหา เปรียบเทียบ
+        และเลือกที่พักที่เหมาะกับทริปของคุณได้ในที่เดียว
+        พร้อมข้อมูลที่เข้าใจง่ายและราคาที่ชัดเจน
+      </p>
+      <p>
+        เป้าหมายของเราคือทำให้การเลือกที่พัก
+        เป็นอีกหนึ่งขั้นตอนที่ง่ายที่สุดของการเดินทาง
+      </p>
+    </div>
+  </div>
+
+    <div class="rounded-2xl overflow-hidden">
+    <img
+      src="images/about.webp"
+      alt="OhmHotel"
+      class="w-full h-80 object-cover"
+    />
+  </div>
+  </section>
+
+  <div class="flex justify-center gap-6 mt-5">
+  <a href="https://facebook.com" target="_blank">
+    <img src="images/facebook.png" alt="Facebook" class="w-10 h-10">
+  </a>
+
+  <a href="https://instagram.com" target="_blank">
+    <img src="images/Instagram.png" alt="Instagram" class="w-10 h-10">
+  </a>
+
+  <a href="https://line.me" target="_blank">
+    <img src="images/line.png" alt="Line" class="w-10 h-10">
+  </a>
+</div>
   </main>
+
+
+
   <footer class="bg-white border-t border-stone-100">
     <p class="text-center text-stone-400 text-xs py-8">© 2024 จองที่พัก · ทำเพื่อการเรียนรู้</p>
   </footer>

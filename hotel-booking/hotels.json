@@ -13,7 +13,7 @@
       "สระว่ายน้ำ",
       "อาหารเช้า"
     ],
-    "image": "https://loremflickr.com/600/400/resort?lock=12"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNufj27dI4jrqlY6mmFEFjQZq9GxvieOas3AQszFtqoSULG-mVk5XVf-M&s=10"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
       "WiFi ฟรี",
       "ฟิตเนส"
     ],
-    "image": "https://loremflickr.com/600/400/hotel,city?lock=12"
+    "image": "https://www.luxurysocietyasia.com/wp-content/uploads/Exterior-night.jpg"
   },
   {
     "id": 3,
@@ -41,7 +41,7 @@
       "WiFi ฟรี",
       "วิวภูเขา"
     ],
-    "image": "https://loremflickr.com/600/400/mountain,homestay?lock=13"
+    "image": "https://s359.kapook.com/pagebuilder/d192c8ae-9276-4e6f-a3ca-dfdb073f2407.jpg"
   },
   {
     "id": 4,
@@ -57,7 +57,7 @@
       "สระว่ายน้ำ",
       "สปา"
     ],
-    "image": "https://loremflickr.com/600/400/river,hotel?lock=14"
+    "image": "https://www.fortunehotelgroup.com/fortune-riverview-hotel-nakhon-phanom/wp-content/uploads/sites/4/2021/05/1500-800-%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81.jpg"
   },
   {
     "id": 5,
@@ -73,7 +73,7 @@
       "ติดทะเล",
       "อาหารเช้า"
     ],
-    "image": "https://loremflickr.com/600/400/villa,sea?lock=15"
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/a9/31/06/kalima-resort-spa-phuket.jpg?w=1200&h=-1&s=1"
   },
   {
     "id": 6,
@@ -87,6 +87,22 @@
       "WiFi ฟรี",
       "สวน"
     ],
-    "image": "https://loremflickr.com/600/400/garden,guesthouse?lock=8"
+    "image": "https://www.chillpainai.com/src/wewakeup/scoop/images/d9dd1bf04e9503123612d7263f33aeade8bae09d.jpg"
+  },
+{
+    "id": 7,
+    "name": "ภูฟ้า รีสอร์ท",
+    "city": "เชียงราย",
+    "price": 2800,
+    "oldPrice": 3500,
+    "rating": 4,
+    "reviews": 215,
+    "emoji": "🏞️",
+    "amenities": [
+      "WiFi ฟรี",
+      "วิวภูเขา",
+      "อาหารเช้า"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2T6y6vr1HJH6glIeA-cGP_ndLpo2hfa2uIMdjxnDH_17TYz_6Gf_tTCec&s=10"
   }
 ]

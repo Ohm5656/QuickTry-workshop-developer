@@ -26,6 +26,11 @@
        ลองใส่: background (พื้นหลัง), border-radius (มุมโค้ง), padding (ระยะขอบใน), color (สีตัวอักษร) */
     .promo-card {
       /* เขียน CSS ตรงนี้ */
+      background: linear-gradient(135deg, #fff3cd, #ffe69c);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     
     }
   </style>
 </head>
@@ -45,11 +50,11 @@
   <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-stone-100">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6">
       <!-- 👇 โจทย์ 1: ลองแก้ชื่อร้านตรงนี้ -->
-      <a href="index.html" class="text-2xl font-bold text-orange-600 shrink-0">ร้านของเรา</a>
+      <a href="index.html" class="text-2xl font-bold text-orange-600 shrink-0">ร้านของ Ohmmypopy</a>
 
       <!-- ช่องค้นหา (ไอคอนแว่นขยาย ไม่ต้องแก้) -->
       <div class="flex-1 max-w-xl relative hidden sm:block">
-        <input type="text" placeholder="ค้นหาสินค้า..."
+        <input id="product-search" type="search" placeholder="ค้นหาสินค้า..."
           class="w-full rounded-full border border-stone-200 bg-stone-50 pl-11 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500" />
         <svg class="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       </div>
@@ -64,10 +69,10 @@
 
     <!-- เมนูหมวดหมู่ -->
     <nav class="max-w-6xl mx-auto px-6 pb-3 flex gap-6 text-sm text-stone-500 overflow-x-auto">
-      <a href="#" class="hover:text-orange-600 whitespace-nowrap">สินค้าทั้งหมด</a>
-      <a href="#" class="hover:text-orange-600 whitespace-nowrap">โปรโมชั่น</a>
-      <a href="#" class="hover:text-orange-600 whitespace-nowrap">สินค้าใหม่</a>
-      <a href="#" class="hover:text-orange-600 whitespace-nowrap">ขายดี</a>
+      <a href="#product-section" class="hover:text-orange-600 whitespace-nowrap">สินค้าทั้งหมด</a>
+      <a href="#promotions" class="hover:text-orange-600 whitespace-nowrap">โปรโมชั่น</a>
+      <a href="#featured-products" class="hover:text-orange-600 whitespace-nowrap">สินค้าใหม่</a>
+      <a href="#product-section" class="hover:text-orange-600 whitespace-nowrap">ขายดี</a>
     </nav>
   </header>
 
@@ -81,7 +86,7 @@
         <!-- 👇 โจทย์ 1: แก้ข้อความต้อนรับ + ข้อความบนปุ่ม -->
         <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">ช้อปสินค้าดี<br>ในราคาสบายกระเป๋า</h2>
         <p class="text-white/90 text-lg mb-6">คัดของคุณภาพมาเพื่อคุณ ส่งไว ทั่วไทย</p>
-        <button class="bg-white text-orange-600 font-semibold px-7 py-3 rounded-full hover:bg-orange-50 transition">ช้อปเลย</button>
+        <button id="shop-now" class="bg-white text-orange-600 font-semibold px-7 py-3 rounded-full hover:bg-orange-50 transition">ช้อปเลย</button>
       </div>
       <div class="hidden md:flex justify-center text-[10rem] leading-none">🛍️</div>
     </section>
@@ -99,7 +104,7 @@
     <!-- ============================================================
          สินค้าแนะนำ — การ์ดเขียนมือ (HTML/CSS)
          ============================================================ -->
-    <section class="mb-16">
+    <section id="featured-products" class="mb-16">
       <h3 class="text-2xl font-bold mb-6">สินค้าแนะนำ</h3>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -132,20 +137,20 @@
         </article>
 
         <!-- การ์ดโปรโมชัน — 👇 โจทย์ 2: แต่งด้วย CSS ดิบ (คลาส .promo-card อยู่ในส่วน <style> ด้านบน) -->
-        <article class="promo-card">
+        <article id="promotions" class="promo-card">
           <h4>ลดพิเศษวันนี้!</h4>
           <p>ช้อปครบ ฿500 ส่งฟรีทั่วไทย</p>
         </article>
 
         <!-- 👇 โจทย์ 4: สร้างการ์ดสินค้าใบที่ 3 ตรงนี้ (ก็อปโครงจากการ์ดข้างบน) -->
-
+          
       </div>
     </section>
 
     <!-- ============================================================
          สินค้าทั้งหมด — การ์ดที่ JavaScript สร้างจาก products.json
          ============================================================ -->
-    <section class="mb-20">
+    <section id="product-section" class="mb-20">
       <!-- 👇 โจทย์ 3: หัวข้อนี้ชิดซ้ายอยู่ ลองจัดให้อยู่กึ่งกลาง -->
       <h3 class="text-2xl font-bold mb-6">สินค้าทั้งหมด</h3>
 
